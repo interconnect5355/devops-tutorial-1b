@@ -103,9 +103,6 @@ stages:
           application: '${CF_APP}'
         script: |-
           #!/bin/bash
-          echo Downloading and extracting archive...
-          curl -s -L -o node_modules.tar.gz https://github.com/interconnect5355/tutorial1_node/blob/master/node_modules.tar.gz\?raw\=true
-          tar -xzf node_modules.tar.gz
           cf push "${CF_APP}-test-blue" -n "${CF_APP}-test"
           cf delete "${CF_APP}-test-green" --f
           cf rename "${CF_APP}-test-blue" "${CF_APP}-test-green"
@@ -221,9 +218,6 @@ stages:
           application: '${CF_APP}'
         script: |-
           #!/bin/bash
-          echo Downloading and extracting archive...
-          curl -s -L -o node_modules.tar.gz https://github.com/interconnect5355/tutorial1_node/blob/master/node_modules.tar.gz\?raw\=true
-          tar -xzf node_modules.tar.gz
           cf push "${CF_APP}-blue" -n "${CF_APP}" --no-start
           if [ -f .newrelic/key ];
           then
