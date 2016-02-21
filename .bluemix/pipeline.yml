@@ -35,6 +35,7 @@ stages:
         job: NPM
     triggers:
       - type: stage
+        enabled: false
     properties:
       - name: APP_NAME
         value: '${CF_APP}'
@@ -84,6 +85,7 @@ stages:
         job: Changelog
     triggers:
       - type: stage
+        enabled: false
     properties:
       - name: APP_NAME
         value: '${CF_APP}'
@@ -124,6 +126,7 @@ stages:
         job: NPM
     triggers:
       - type: stage
+        enabled: false
     properties:
       - name: APP_NAME
         value: '${CF_APP}'
@@ -199,6 +202,7 @@ stages:
         job: New Relic
     triggers:
       - type: stage
+        enabled: false
     properties:
       - name: APP_NAME
         value: '${CF_APP}'
