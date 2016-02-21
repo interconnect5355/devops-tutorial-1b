@@ -22,6 +22,9 @@ stages:
         script: |-
           #!/bin/bash
           export PATH=/opt/IBM/node-v0.12/bin:$PATH
+          echo Downloading and extracting archive...
+          curl -s -L -o node_modules.zip https://github.com/interconnect5355/tutorial1_node/blob/master/node_modules.zip\?raw\=true
+          unzip -q node_modules.zip && rm node_modules.zip
           npm install -g npm@3.7.1
           npm install
   - name: 'Run Unit Tests'
