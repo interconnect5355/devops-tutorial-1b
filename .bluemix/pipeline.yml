@@ -25,7 +25,6 @@ stages:
           echo Downloading and extracting archive...
           curl -s -L -o node_modules.tar.gz https://github.com/interconnect5355/tutorial1_node/blob/master/node_modules.tar.gz\?raw\=true
           tar -xzf node_modules.tar.gz
-          npm install -g npm@3.7.1
           npm install
           rm -rf node_modules
   - name: 'Run Unit Tests'
@@ -58,6 +57,7 @@ stages:
         type: tester
         script: |-
           #!/bin/bash
+          tar -xzf node_modules.tar.gz
           # Karma Unit Test, output file: test/*.xml
           node ./node_modules/gulp/bin/gulp dev-karma
           # Mocha Unit Test, output file: test/*.xml
@@ -103,6 +103,8 @@ stages:
           application: '${CF_APP}'
         script: |-
           #!/bin/bash
+          echo Downloading and extracting archive...
+          curl -s -L -o node_modules.tar.gz https://github.com/interconnect5355/tutorial1_node/blob/master/node_modules.tar.gz\?raw\=true
           tar -xzf node_modules.tar.gz
           cf push "${CF_APP}-test-blue" -n "${CF_APP}-test"
           cf delete "${CF_APP}-test-green" --f
@@ -219,6 +221,9 @@ stages:
           application: '${CF_APP}'
         script: |-
           #!/bin/bash
+          echo Downloading and extracting archive...
+          curl -s -L -o node_modules.tar.gz https://github.com/interconnect5355/tutorial1_node/blob/master/node_modules.tar.gz\?raw\=true
+          tar -xzf node_modules.tar.gz
           cf push "${CF_APP}-blue" -n "${CF_APP}" --no-start
           if [ -f .newrelic/key ];
           then
