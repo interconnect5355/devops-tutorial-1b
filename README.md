@@ -10,4 +10,4 @@ To set up and run certain stages of the pipeline, you might need to register for
 
 Use of the sample application is governed by the terms of the MIT license (see the license file). Any other open source software included in the sample is made available under the terms of their respective open source licenses.
 
-[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy?repository=https://github.com/oneibmcloud/devops-tutorial-1b.git)
+[![Deploy to Bluemix](https://bluemix.net/deploy/button.png)](https://bluemix.net/deploy/index.html?repository=https://github.com/interconnect5355/devops-tutorial-1b.git)
